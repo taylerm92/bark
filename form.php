@@ -1,7 +1,7 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <!-- This is close button for sideNav -->
   <div class="container formContainer">
-    <form class="form-horizontal" action="insert.php" method="post">
+    <form class="form-horizontal" action="index.php" method="post">
 
       <div class="form-group">
         <div class="col-sm-12">
