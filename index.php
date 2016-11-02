@@ -20,20 +20,31 @@ $db = $con -> $dbname;
 		<link rel="stylesheet" type="text/css" href="/bark/css/form.css"><!-- css file for sidenav and form -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- bootstrap related javascript -->
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyD9DEz4zv2NRZjDOkLACx0LK4uhiIeq_8k"></script>
+		<script type="text/javascript" src="/bark/scripts/gmaps.js"></script>
 	</head>
 	<body>
 		<?php include 'includes/navbar.php' ?>
 		<?php include 'includes/form.php'; ?>
 		<!-- Use any element to open the sidenav -->
-
+		<script type="text/javascript"> //map specific javascript
+		      $(document).ready(function(){
+		        map = new GMaps({
+		          div: '#map',
+		          lat: 34.3,
+		          lng: -94.14,
+		          zoom: 4,
+		        });
+					});
+		</script>
 
 		<div id="main">
 			<!-- All Homepage specific html should go here -->
 			<div id="second" class="container text-center">
-				asdf
+
 			</div>
 			<div id="third" class="container text-center">
-				asdf
+				<div id="map"></div>
 			</div>
 		</div>
 		<!-- Footer -->
