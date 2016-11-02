@@ -7,3 +7,12 @@ html, body {
 	min-height: 100%;
 	color: black;
 }
+
+#logo{
+	height: 50px;
+	width: 126px;
+}
+
+#logo:hover{
+	cursor: pointer;
+}
