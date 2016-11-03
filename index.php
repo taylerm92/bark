@@ -1,7 +1,7 @@
 <?php
 	// This is the index page.
 $dbhost = 'localhost';
-$dbname = 'yelp';
+$dbname = 'Yelp';
 
 $con = new MongoClient();
 //echo "You connected to Mongo Database <br>";
@@ -27,23 +27,14 @@ $db = $con -> $dbname;
 		<?php include 'includes/navbar.php' ?>
 		<?php include 'includes/form.php'; ?>
 		<!-- Use any element to open the sidenav -->
-		<script type="text/javascript"> //map specific javascript
-		      $(document).ready(function(){
-		        map = new GMaps({
-		          div: '#map',
-		          lat: 34.3,
-		          lng: -94.14,
-		          zoom: 4,
-		        });
-					});
-		</script>
+
 
 		<div id="main">
 			<!-- All Homepage specific html should go here -->
 			<div id="second" class="container text-center">
 				<table class="table table-striped" >
+					<tr>
 				 <thead style="text-align:center;">
-					 <tr>
 						 <th>Firstname</th>
 						 <th>Lastname</th>
 						 <th>Email</th>
@@ -70,6 +61,8 @@ $db = $con -> $dbname;
 			</div>
 			<div id="third" class="container text-center">
 				<div id="map"></div>
+				<?php include 'includes/addmarkers.php' ?>
+
 			</div>
 		</div>
 		<!-- Footer -->
