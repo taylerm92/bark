@@ -9,9 +9,13 @@ if (isset($_POST['name']) && isset($_POST['keyword'])) {
   $name = $_POST['name'];
   $keyword = $_POST['keyword'];
 
-  $query = array("city"=> new MongoRegex("/$name/i"));
-  $businesses = $db->business->find($query);
+  $query = array("city"=> new MongoRegex("/$name/i"),
+                "categories" =>new MongoRegex("/$keyword/i"),
+                "stars"=> array('$gte'=>$stars));
 
+  $businesses = $db->business->find($query)->sort(array("stars"=> 1));
+  $count = var_dump($businesses->count());
+  echo $count;
 }
 
 ?>
