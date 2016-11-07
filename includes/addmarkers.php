@@ -22,6 +22,7 @@ if (isset($_POST['name']) && isset($_POST['keyword'])) {
      $longitude = $business['longitude'];
   }
 
+  $longitude = $longitude + .14;
 }
 
 ?>
@@ -31,7 +32,8 @@ if (isset($_POST['name']) && isset($_POST['keyword'])) {
           div: '#map',
           lat: '<?php echo $latitude; ?>',
           lng: '<?php echo $longitude; ?>',
-          zoom: 9,
+          zoom: 11,
+          scrollwheel: false,
         });
         <?php
         foreach ($businesses as $bu): ?>
