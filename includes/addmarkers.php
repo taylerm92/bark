@@ -16,6 +16,12 @@ if (isset($_POST['name']) && isset($_POST['keyword'])) {
   $businesses = $db->business->find($query)->sort(array("stars"=> 1));
   $count = var_dump($businesses->count());
   echo $count;
+
+  foreach($businesses as $business){
+     $latitude = $business['latitude'];
+     $longitude = $business['longitude'];
+  }
+
 }
 
 ?>
@@ -23,9 +29,9 @@ if (isset($_POST['name']) && isset($_POST['keyword'])) {
       $(document).ready(function(){
         map = new GMaps({
           div: '#map',
-          lat: 34.3,
-          lng: -94.14,
-          zoom: 4,
+          lat: '<?php echo $latitude; ?>',
+          lng: '<?php echo $longitude; ?>',
+          zoom: 9,
         });
         <?php
         foreach ($businesses as $bu): ?>
