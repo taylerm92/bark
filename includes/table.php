@@ -18,6 +18,7 @@ if (isset($_POST['name']) && isset($_POST['keyword'])) {
   foreach($businesses as $business)
   {
     echo "<pre>";
+    ?><a href="includes/reviews.php?reviewid=<?php echo $business['business_id']; ?>">link</a><?php
     echo $business['name'];
     echo "</pre>";
   }
