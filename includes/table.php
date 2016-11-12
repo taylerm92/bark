@@ -18,7 +18,8 @@ if (isset($_POST['name']) && isset($_POST['keyword'])) {
   foreach($businesses as $business)
   {
     echo "<pre>";
-    ?><a href="includes/reviews.php?reviewid=<?php echo $business['business_id']; ?>">link</a><?php
+    $url = "reviews.php?reviewid=".urlencode($business['business_id'])."&latitude=".urlencode($business['latitude'])."&longitude=".urlencode($business['longitude']);
+    ?><a href="<?php echo $url; ?>">link</a><?php
     echo $business['name'];
     echo "</pre>";
   }
