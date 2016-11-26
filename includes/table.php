@@ -20,7 +20,9 @@ if (isset($_POST['name']) && isset($_POST['keyword'])) {
     echo "<pre>";
     $url = "reviews.php?reviewid=".urlencode($business['business_id'])."&latitude=".urlencode($business['latitude'])."&longitude=".urlencode($business['longitude']);
     ?><a href="<?php echo $url; ?>">link</a><?php
-    echo $business['name'];
+    echo "\n Name: ".$business['name'];
+    echo "\n Address: ".$business['full_address'];
+    echo "\n Rating: ".$business['stars'];
     echo "</pre>";
   }
   ?></div><?php

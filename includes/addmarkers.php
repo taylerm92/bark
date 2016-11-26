@@ -49,12 +49,11 @@ if (isset($_POST['name']) && isset($_POST['keyword'])) {
            echo "lng:".$bu['longitude'].",\n";
            echo "title: '".$placename."',\n";
            echo "infoWindow: {\n";
-           echo "content: '<p class=\"marker\">"."name: ".$placename.
-           "<br/>"."address: ".$address.
-           "<br/>"."star rating: ".$bu['stars'].
-           "<br/>"."twitter: <a  target=\"_blank\" href=\"https://twitter.com/search?q=$placename\"><img alt=\"Twitter\"  class=\"twitterIcon\" src=\"images/twitter-16.png\"></a>".
-           "<br/>"."panoramio: ".
-           "</p>' }\n";
+           echo "content: '<p class=\"marker\">"."Name: ".$placename.
+           "<br/>"."Address: ".$address.
+           "<br/>"."Rating: ".$bu['stars'].
+           "<br/>"."Twitter: <a  target=\"_blank\" href=\"https://twitter.com/search?q=$placename\"><img alt=\"Twitter\"  class=\"twitterIcon\" src=\"images/twitter-16.png\"></a>".
+               "</p>' }\n";
             echo "});\n";
          ?>
          <?php endforeach;
