@@ -15,7 +15,6 @@ if (isset($_POST['name']) && isset($_POST['keyword'])) {
 
   $businesses = $db->business->find($query)->sort(array("stars"=> 1));
   $count = var_dump($businesses->count());
-  echo $count;
 
   foreach($businesses as $business){
      $latitude = $business['latitude'];

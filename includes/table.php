@@ -19,12 +19,36 @@ if (isset($_POST['name']) && isset($_POST['keyword'])) {
   {
     echo "<pre>";
     $url = "reviews.php?reviewid=".urlencode($business['business_id'])."&latitude=".urlencode($business['latitude'])."&longitude=".urlencode($business['longitude']);
-    ?><a href="<?php echo $url; ?>">link</a><?php
-    echo "\n Name: ".$business['name'];
-    echo "\n Address: ".$business['full_address'];
-    echo "\n Rating: ".$business['stars'];
-    echo "</pre>";
+    echo "\n<h3>".$business['name']."</h3>";
+    echo printStars($business['stars']);
+    echo "\n Address: ".$business['full_address']."<br>";
+    ?><a href="<?php echo $url; ?>">Reviews (<?php echo $business['review_count']?>)</a><?php
+    echo "<br></pre>";
   }
   ?></div><?php
 }
+
+function printStars($rating)
+  {
+    if($rating < 6 && $rating > 4.9)
+    {
+      echo "★★★★★";
+    }
+    else if($rating <5 && $rating > 3.9)
+    {
+      echo "★★★★";
+    }
+    else if($rating <4 && $rating > 2.9)
+    {
+      echo "★★★";
+    }
+    else if($rating <3 && $rating > 1.9)
+    {
+      echo "★★";
+    }
+    else
+    {
+      echo "★";
+    }
+  }
 ?>
