@@ -35,7 +35,17 @@
     </form>
   </div>
 </div>
+<?php if (isset($_POST['name']) && isset($_POST['keyword'])) {
+  if (isset($_POST['star'])) {
+    $_SESSION['star'] = (double)$_POST['star'];
 
+  }else {
+    $_SESSION['star'] = 1.0;
+  }
+  $_SESSION['name'] = $_POST['name'];
+  $_SESSION['keyword'] = $_POST['keyword'];
+}
+?>
 
 <script>
   /* Open the sidenav */

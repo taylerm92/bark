@@ -1,13 +1,13 @@
 <?php
-if (isset($_POST['name']) && isset($_POST['keyword'])) {
-  if (isset($_POST['star'])) {
-    $stars = (double)$_POST['star'];
+if (isset($_SESSION['name']) && isset($_SESSION['keyword'])) {
+  if (isset($_SESSION['star'])) {
+    $stars = (double)$_SESSION['star'];
 
   }else {
     $stars = 1.0;
   }
-  $name = $_POST['name'];
-  $keyword = $_POST['keyword'];
+  $name = $_SESSION['name'];
+  $keyword = $_SESSION['keyword'];
 
   $query = array("city"=> new MongoRegex("/$name/i"),
                 "categories" =>new MongoRegex("/$keyword/i"),

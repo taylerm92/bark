@@ -1,4 +1,5 @@
 <?php
+session_start();
 	// This is the index page.
 $dbhost = 'localhost';
 $dbname = 'yelp';
@@ -27,7 +28,7 @@ $db = $con -> $dbname;
 		<?php include 'includes/navbar.php' ?>
 		<?php include 'includes/form.php'; ?>
 		<!-- Use any element to open the sidenav -->
-
+		
 
 		<div id="main">
 			<!-- All Homepage specific html should go here -->
